@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUMN Ritual Sound Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Museo+Moderno:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #1F1F1F;
+      --color-primary: #FF6F3C;
+      --color-accent: #A8E6CF;
+      --color-text: #FFFFFF;
+      --color-secondary-text: #666666;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+    body {
+      margin: 0;
+      font-family: 'Museo Moderno', serif;
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 0.5em;
+    }
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: var(--color-bg);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--color-primary);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      margin-left: 1rem;
+    }
+    nav a {
+      color: var(--color-text);
+    }
+    main {
+      padding: 1rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .chat {
+      background: #2b2b2b;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .chat-bubble {
+      background: var(--color-primary);
+      color: var(--color-bg);
+      padding: 0.75rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .chat-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .chat-form input[type="text"] {
+      flex-grow: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+    }
+    .chat-form input[type="text"]:focus {
+      outline: 2px solid var(--color-accent);
+    }
+    .chat-form button {
+      background: var(--color-accent);
+      color: var(--color-bg);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .chat-form button:hover,
+    .chat-form button:focus {
+      background: var(--color-primary);
+    }
+    .session-card {
+      background: #2b2b2b;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .session-card h2 {
+      margin-top: 0;
+    }
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .controls button {
+      background: var(--color-accent);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--color-bg);
+    }
+    .controls button:hover,
+    .controls button:focus {
+      background: var(--color-primary);
+    }
+    .affirmation {
+      text-align: center;
+      font-style: italic;
+      color: var(--color-secondary-text);
+      margin: 2rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: var(--color-secondary-text);
+      font-size: 0.875rem;
+      border-top: 1px solid #444;
+    }
+    @media (min-width: 768px) {
+      header {
+        padding: 1.5rem 2rem;
+      }
+      .hero {
+        padding: 3rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">HUMN</div>
+    <nav>
+      <ul>
+        <li><a href="#" aria-label="Home">Home</a></li>
+        <li><a href="#" aria-label="About">About</a></li>
+        <li><a href="#" aria-label="Contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Step into your sanctuary…</h1>
+      <p>Your journey to mindful sound begins here.</p>
+    </section>
+    <section class="chat" aria-labelledby="chat-heading">
+      <h2 id="chat-heading" class="visually-hidden">AI Chat</h2>
+      <div class="chat-bubble" role="status">HUMN: What vibe are you seeking today?</div>
+      <form class="chat-form" action="#" method="post">
+        <label class="visually-hidden" for="user-input">Your message</label>
+        <input id="user-input" type="text" placeholder="Describe your mood...">
+        <button type="submit">Send</button>
+      </form>
+    </section>
+    <section class="session-card" aria-labelledby="session-heading">
+      <h2 id="session-heading">Your Session</h2>
+      <audio controls>
+        <source src="session.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="controls">
+        <button type="button">Play</button>
+        <button type="button">Download</button>
+        <button type="button">Save</button>
+      </div>
+    </section>
+    <section class="affirmation">
+      <p><em>You are aligned with your highest frequency.</em></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 HUMN Ritual Sound Studio. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+</body>
+</html>
